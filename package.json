@@ -4,7 +4,7 @@
   "description": "```\r npm init -y\r ```",
   "main": "index.js",
   "scripts": {
-    "build":"webpack -p",
+    "build": "webpack -p",
     "dev": "webpack-dev-server --open"
   },
   "repository": {
@@ -35,6 +35,8 @@
     "react-swipe": "^5.1.0",
     "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "swipe-js-iso": "^2.0.4",
     "whatwg-fetch": "^2.0.3"

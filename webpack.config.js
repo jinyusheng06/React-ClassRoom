@@ -7,7 +7,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   //可以配置一个源代码到打包后代码的一个映射，可以在控制看到源代码报错的行数而非bundle.js里的行里
-  devtool: 'cheap-module-source-map',
+    devtool: 'cheap-module-source-map',
+    devServer:{
+    //如果
+      proxy:{
+       '/api':'http://localhost:3000'
+      }
+    },
   module: {
     rules: [
       {

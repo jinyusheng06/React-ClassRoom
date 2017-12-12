@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
   .home-logo{
     height: 56px;
     background: #000;
@@ -35,4 +36,18 @@
       border-top:1px solid #464646;
     }
   }
+}
+.fade-enter{
+   opacity: 0;
+ }
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit.fade-exit-active{
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
