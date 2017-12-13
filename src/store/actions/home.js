@@ -1,5 +1,5 @@
 import * as types from '../action-types'
-import {getSliders} from '../../api/home'
+import {getLessons, getSliders} from '../../api/home'
 export default {
     fetchSliders(){
         //正常的action只能使用纯对象 如果需要派发函数的话需要使用中间件 redux-thunk
@@ -21,6 +21,20 @@ export default {
                 payload:getSliders()//放的就是轮播图数组了
             })
         }
-
+    },
+    fetchLessons(){
+        return function (dispatch,getState) {
+            let {lessons:{
+                loading,
+                offset,
+                limit,
+                hasMore
+            }} = getState().home
+            //如果已加载获取数据了 则重复点击不要在获取了
+            if(hasMore&&!loading){
+                dispatch({type:types.FETCH_LESSONS})
+                dispatch({type:types.FETCH_LESSONS_SUCCESS,payload:getLessons(offset,limit)})
+            }
+        }
     }
 }
